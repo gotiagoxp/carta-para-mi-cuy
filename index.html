@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <svg class="svg-filtros" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="textura-papel" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" result="noise" />
+        <feColorMatrix type="saturate" values="0" in="noise" result="gray" />
+        <feBlend in="SourceGraphic" in2="gray" mode="multiply" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="fondo-particulas" aria-hidden="true"></div>
+
+  <!-- Pantalla 1: Te amo -->
+  <section id="pantalla-te-amo" class="pantalla activa">
+    <div class="corazones-flotantes" aria-hidden="true"></div>
+    <h1 class="titulo-amo">
+      <span class="letra" style="--i:0">T</span><span class="letra" style="--i:1">e</span>
+      <span class="espacio"></span>
+      <span class="letra" style="--i:2">a</span><span class="letra" style="--i:3">m</span><span class="letra" style="--i:4">o</span>
+    </h1>
+    <p class="subtitulo-amo">Toca para continuar</p>
+  </section>
+
+  <!-- Pantalla 2: Carta cerrada → sello → hoja con poema -->
+  <section id="pantalla-carta" class="pantalla">
+    <p class="instruccion-carta" id="instruccion-carta">Toca el sello para abrir la caja</p>
+    <div class="escena-carta" id="escena-carta">
+      <div class="mesa-sombra" aria-hidden="true"></div>
+
+      <div class="caja-carta" id="carta-cerrada" aria-hidden="false">
+        <div class="envoltorio" id="envoltorio">
+          <div class="env-reverso textura-kraft" aria-hidden="true"></div>
+          <div class="env-lat env-lat-izq textura-kraft" aria-hidden="true"></div>
+          <div class="env-lat env-lat-der textura-kraft" aria-hidden="true"></div>
+          <div class="env-colita textura-kraft" aria-hidden="true"></div>
+          <div class="env-frente textura-kraft" aria-hidden="true"></div>
+          <div class="env-tapadero textura-kraft" aria-hidden="true"></div>
+          <div class="env-solapa textura-kraft" id="env-solapa"></div>
+          <div class="env-boca" aria-hidden="true"></div>
+        </div>
+
+        <article class="panel-poema hoja-en-caja" id="panel-poema" aria-hidden="true">
+          <div class="hoja-apilada">
+            <div class="hoja-detras" aria-hidden="true"></div>
+            <div class="papel textura-carta papel-abierto forma-carta">
+              <div class="lineas-escritura" aria-hidden="true"></div>
+              <div class="ornamento-esquina ornamento-sup-izq" aria-hidden="true"></div>
+              <div class="ornamento-esquina ornamento-sup-der" aria-hidden="true"></div>
+              <div class="ornamento-esquina ornamento-inf-izq" aria-hidden="true"></div>
+              <div class="ornamento-esquina ornamento-inf-der" aria-hidden="true"></div>
+              <div class="doblez-superior" aria-hidden="true"></div>
+              <div class="contenido-carta contenido-visible">
+                <header class="encabezado-carta">
+                  <span class="florecilla" aria-hidden="true">✿</span>
+                  <span class="para-quien" id="destinatario"></span>
+                </header>
+                <div class="contenido-poema" id="contenido-poema"></div>
+                <footer class="firma-carta">
+                  <span class="corazon-firma" aria-hidden="true">♥</span>
+                  <span id="firma"></span>
+                  <time id="fecha-carta"></time>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div
+          class="sello-cuy"
+          id="sello-cuy"
+          role="button"
+          tabindex="0"
+          aria-label="Abrir la carta"
+        >
+          <img
+            class="img-sello"
+            id="img-sello"
+            alt="Sello del cuy"
+            decoding="async"
+          />
+          <span class="sello-vacio" id="sello-vacio" aria-hidden="true"></span>
+          <span class="sello-astilla sello-astilla-a" aria-hidden="true"></span>
+          <span class="sello-astilla sello-astilla-b" aria-hidden="true"></span>
+          <span class="sello-astilla sello-astilla-c" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="poema.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

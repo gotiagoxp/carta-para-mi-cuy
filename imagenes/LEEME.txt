@@ -1,0 +1,7 @@
+Coloca aquí la imagen del sello del cuy.
+
+Nombre recomendado: sello-cuy.jpg (o .png / .webp)
+Si el archivo tiene otro nombre, cambia en poema.js → imagenSello
+
+Tamaño sugerido: cuadrada, unos 200×200 px o más.
+JPG con fondo blanco: colócalo igual; la página intenta fundir el blanco con el sello.
